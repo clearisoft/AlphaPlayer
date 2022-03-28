@@ -261,7 +261,7 @@ class PlayerController(val context: Context, owner: LifecycleOwner, val alphaVid
 
         val dataPath = dataSource.getPath(orientation)
         val scaleType = dataSource.getScaleType(orientation)
-        if (TextUtils.isEmpty(dataPath) || !File(dataPath).exists()) {
+        if (TextUtils.isEmpty(dataPath)/* || !File(dataPath).exists()*/) {
             monitor(false, errorInfo = "dataPath is empty or File is not exists. path = $dataPath")
             emitEndSignal()
             return
